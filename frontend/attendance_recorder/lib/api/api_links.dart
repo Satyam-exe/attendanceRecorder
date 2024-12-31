@@ -4,6 +4,7 @@ String allStudentsLink = "${website}users/students/";
 String allTeachersLink = "${website}users/teachers/";
 String allClassesLink = "${website}classes/classes/";
 String allAttendanceLink = "${website}attendance/attendance/";
+String loginLink = "${website}users/login/";
 
 String getSpecificStudentLink(int admnNumber){
   return "$allStudentsLink$admnNumber/";

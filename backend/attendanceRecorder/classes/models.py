@@ -16,5 +16,8 @@ class Class(models.Model):
         related_name='subject_classes'
     )
 
+    class Meta:
+        verbose_name_plural = 'Classes'
+
     def __str__(self):
         return f"{toRoman(self.grade)}-{self.section}"

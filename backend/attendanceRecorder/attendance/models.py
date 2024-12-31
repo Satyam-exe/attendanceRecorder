@@ -20,19 +20,19 @@ class Attendance(models.Model):
         on_delete=models.CASCADE,
         related_name='attendance_records'
     )
-    date = models.DateField(auto_now_add=True)
-    time = models.TimeField(auto_now_add=True)
+    date_time = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
         max_length=10,
         choices=[('present', 'Present'), ('absent', 'Absent'), ('late', 'Late')]
     )
 
     class Meta:
-        unique_together = ('student', 'class_instance', 'date', 'time')  # Prevent duplicate entries
+        unique_together = ('student', 'class_instance', 'date_time')  # Prevent duplicate entries
         indexes = [
-            models.Index(fields=['student', 'date']),
-            models.Index(fields=['class_instance', 'date']),
+            models.Index(fields=['student', 'date_time']),
+            models.Index(fields=['class_instance', 'date_time']),
         ]
+        verbose_name_plural = 'Attendance'
 
     def __str__(self):
-        return f"{self.student.user.full_name} - {self.status} ({self.date}, {self.time})"
+        return f"{self.student.user.full_name} - {self.status} ({self.date_time})"
