@@ -5,9 +5,14 @@ String allTeachersLink = "${website}users/teachers/";
 String allClassesLink = "${website}classes/classes/";
 String allAttendanceLink = "${website}attendance/attendance/";
 String loginLink = "${website}users/login/";
+String addAttendanceLink = "${website}attendance/add/";
 
-String getSpecificStudentLink(int admnNumber){
-  return "$allStudentsLink$admnNumber/";
+String getSpecificStudentLinkFromAdmnNumber(int admnNumber){
+  return "$allStudentsLink?admn_number=$admnNumber";
+}
+
+String getSpecificStudentLinkFromUserId(int userId){
+  return "$allStudentsLink?id=$userId";
 }
 
 String getSpecificTeacherLink(int id){

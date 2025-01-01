@@ -42,3 +42,12 @@ class Teacher(models.Model):
     def __str__(self):
         return f"Teacher: {self.user.full_name} ({self.subject})"
 
+
+class LoginTracker(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    action = models.CharField(max_length=10, choices=[('login', 'Login'), ('logout', 'Logout')])
+    action_time = models.DateTimeField(auto_now_add=True)
+    ip_address = models.GenericIPAddressField()
+
+    def __str__(self):
+        return f"Login Tracker: {self.user.full_name} - {self.action} ({self.action_time})"

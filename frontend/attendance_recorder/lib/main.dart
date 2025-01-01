@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'db/database.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(Provider<AppDatabase>(
+      create: (context) => AppDatabase(),
+      child: MyApp(),
+      dispose: (context, db) => db.close(),
+   ),);
 }
 
 class MyApp extends StatelessWidget {

@@ -5,7 +5,7 @@ from users.views import UserViewSet, TeacherViewSet, StudentViewSet, UserLoginVi
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='users')
-router.register(r'students', StudentViewSet)
+router.register(r'students', StudentViewSet, basename='students')
 router.register(r'teachers', TeacherViewSet)
 
 urlpatterns = router.urls

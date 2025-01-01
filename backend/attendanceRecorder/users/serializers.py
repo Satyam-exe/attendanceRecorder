@@ -32,3 +32,8 @@ class TeacherSerializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField(required=True)
     password = serializers.CharField(required=True)
+    ip_address = serializers.IPAddressField(required=True)
+
+class LogoutSerializer(serializers.Serializer):
+    user_id = serializers.IntegerField(required=True)
+    ip_address = serializers.IPAddressField(required=True)
