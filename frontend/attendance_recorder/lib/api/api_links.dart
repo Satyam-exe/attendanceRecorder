@@ -1,4 +1,4 @@
-String website = "localhost:8000/";
+String website = "http://localhost:8000/";
 String allUsersLink = "${website}users/users/";
 String allStudentsLink = "${website}users/students/";
 String allTeachersLink = "${website}users/teachers/";
